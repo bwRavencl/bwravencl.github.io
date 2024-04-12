@@ -22,22 +22,6 @@
             pointer-events: none;
         }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: #000000;
-            background-image: linear-gradient(0deg, #00000000, #ff00b3c3 50%, #ff8000 60%, #d30094c3 65%, #00000000), url(background.gif); 
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
-            background-size: 100% 100%;
-            color: #e7e7e7;
-            margin: 0;
-            animation: textShadow 1.0s infinite;
-        }
-
         @keyframes textShadow {
             0% {
                 text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
@@ -124,12 +108,68 @@
             }
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #000000;
+            background-image: linear-gradient(0deg, #00000000, #ff00b3c3 50%, #ff8000 60%, #d30094c3 65%, #00000000), url(background.gif); 
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+            color: #e7e7e7;
+            margin: 0;
+            animation: textShadow 1.0s infinite;
+        }
+
+        @keyframes bubble-anim {
+            0% {
+                transform: scale(0);
+            }
+
+            70% {
+                transform: scale(0.65);
+            }
+
+            75% {
+                transform: scale(0.25) rotateZ(-25deg);
+            }
+
+            80% {
+                transform: scale(0.25) rotateZ(25deg);
+            }
+
+            83% {
+                transform: scaleY(0.95) scaleX(1.05);
+            }
+
+            86% {
+                transform: scaleY(1.1) scaleX(0.9);
+            }
+
+            90% {
+                transform: scaleY(0.98) scaleX(1.02);
+            }
+
+            93% {
+                transform: scaleY(1.02) scaleX(0.98);
+            }
+
+            97%,
+            100% {
+                transform: scale(1);
+            }
+        }
+
         img {
             border-style: dotted;
             width: 170px;
             height: 170px;
             border-radius: 170px;
             border-color: #e7e7e7;
+            animation: bubble-anim 2.5s ease-out;
         }
 
         a {
@@ -163,20 +203,56 @@
             margin-inline: 1em;
             font-size: 20pt;
         }
+
+        @keyframes slide-in-right {
+            0% { transform: translateX(200%); }
+            100% { transform: translateX(0%); }
+        }
+
+        @keyframes slide-in-left {
+            0% { transform: translateX(-500%);  }
+            100% { transform: translateX(0%); }
+        }
+
+        @keyframes slide-in-top {
+            0% { transform: translateY(-500%);  }
+            100% { transform: translateY(0%); }
+        }
+
+        @keyframes slide-in-bottom {
+            0% { transform: translateY(5000%);  }
+            100% { transform: translateY(0%); }
+        }
+
+        .slide-in-right {
+            animation: slide-in-right 1s;
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 0.7s;
+        }
+
+        .slide-in-top {
+            animation: slide-in-top 1.2s;
+        }
+
+        .slide-in-bottom {
+            animation: slide-in-bottom 1.2s;
+        }
     </style>
 </head>
 
 <body class="scanlines">
-    <span class="title">bwRavencl</span>
+    <span class="title slide-in-top">bwRavencl</span>
     <div class="main">
-        <h2>a.k.a. Matteo Hausner</h2>
+        <h2 class="slide-in-right">a.k.a. Matteo Hausner</h2>
         <img class="section" src="matteo.jpg">
-        <h1 class="section">Software Developer / Aviation Geek / Human</h1>
-        <h1 class="section">
+        <h1 class="section slide-in-left">Software Developer / Aviation Geek / Human</h1>
+        <h1 class="section slide-in-right">
             Checkout: <a href="https://controllerbuddy.org" target="_blank">ControllerBuddy</a>
         </h1>
     </div>
-    <div class="section">
+    <div class="section slide-in-bottom">
         <div class="icon-container">
             <a class="icon-link" href="mailto:webmaster@bwravencl.de" title="E-Mail" target="_blank">
                 <span class="fa-solid fa-envelope"></span>
