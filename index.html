@@ -111,7 +111,7 @@
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
             text-align: center;
             background-color: #000000;
             background-image: linear-gradient(0deg, #00000000, #ff00b3c3 50%, #ff8000 60%, #d30094c3 65%, #00000000), url(background.gif); 
@@ -192,6 +192,14 @@
             margin: 4em;
         }
 
+        .multiline-text {
+            line-height: 1.5em;
+            margin-left: 10ch;
+            margin-top: 1em;
+            text-align: end;
+            width: 50%
+        }
+
         .icon-container {
             display: flex;
             flex-direction: row;
@@ -202,6 +210,7 @@
         .icon-link {
             margin-inline: 1em;
             font-size: 20pt;
+            text-decoration: none;
         }
 
         @keyframes slide-in-right {
@@ -247,23 +256,29 @@
     <div class="main">
         <h2 class="slide-in-right">a.k.a. Matteo Hausner</h2>
         <img class="section" src="matteo.jpg">
-        <h1 class="section slide-in-left">Software Developer / Aviation Geek / Human</h1>
+        <h1 class="multiline-text section slide-in-left">
+            Code&nbsp;Ninja&nbsp;/<br />
+            Aero&nbsp;Aficionado&nbsp;/<br />
+            Pastry&nbsp;Devourer&nbsp;/<br />
+            Diet&nbsp;Coke&nbsp;Guzzler&nbsp;/<br />
+            Cat&nbsp;Bowl&nbsp;Refueller&nbsp;/<br />
+            80's&nbsp;Rock&nbsp;Resonator&nbsp;/<br />
+            Negentropy&nbsp;Harvester&nbsp;&nbsp;
+        </h1>
         <h1 class="section slide-in-right">
             Checkout: <a href="https://controllerbuddy.org" target="_blank">ControllerBuddy</a>
         </h1>
     </div>
     <div class="section slide-in-bottom">
-        <div class="icon-container">
-            <a class="icon-link" href="mailto:webmaster@bwravencl.de" title="E-Mail" target="_blank">
-                <span class="fa-solid fa-envelope"></span>
-            </a>
-            <a class="icon-link" href="https://github.com/bwRavencl" title="GitHub" target="_blank">
-                <span class="fab fa-github"></span>
-            </a>
-            <a class="icon-link" href="https://youtube.com/bwRavencl" title="YouTube" target="_blank">
-                <span class="fab fa-youtube"></span>
-            </a>
-        </div>
+        <a class="icon-link" href="mailto:webmaster@bwravencl.de" title="E-Mail" target="_blank">
+            <span class="fa-solid fa-envelope"></span>
+        </a>
+        <a class="icon-link" href="https://github.com/bwRavencl" title="GitHub" target="_blank">
+            <span class="fab fa-github"></span>
+        </a>
+        <a class="icon-link" href="https://youtube.com/bwRavencl" title="YouTube" target="_blank">
+            <span class="fab fa-youtube"></span>
+        </a>
     </div>
 </body>
 
