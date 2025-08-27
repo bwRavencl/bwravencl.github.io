@@ -214,6 +214,20 @@
             margin: 4em;
         }
 
+        .avatar {
+            cursor: alias;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip {
+            transform: rotateY(180deg);
+        }
+
+        .flipped {
+            mix-blend-mode: hard-light;
+        }
+
         .multiline-text {
             line-height: 1.5em;
             margin-left: 10ch;
@@ -453,7 +467,30 @@ void main() {
             </div>
             <div class="main">
                 <h2 class="slide-in-right">a.k.a. Matteo Hausner</h2>
-                <img class="section" src="matteo.jpg">
+                <img id="avatar" class="section avatar" src="matteo.jpg">
+                <script>
+                    const avatar = document.getElementById('avatar');
+                    const frontSrc = avatar.src;
+                    const backSrc = 'raven-pilot.png';
+
+                    let showingFront = true;
+
+                    const eventListener = (event) => {
+                        event.preventDefault();
+
+                        avatar.classList.add('flip');
+
+                        setTimeout(() => {
+                            avatar.src = showingFront ? backSrc : frontSrc;
+                            showingFront = !showingFront;
+                            avatar.style.mixBlendMode = showingFront ? 'unset' : 'hard-light';
+                            avatar.classList.remove('flip');
+                        }, 300);
+                    }
+
+                    avatar.addEventListener('click', eventListener);
+                    avatar.addEventListener('contextmenu', eventListener);
+                </script>
                 <h1 class="multiline-text section slide-in-left">
                     Code&nbsp;Ninja&nbsp;/<br>
                     Aero&nbsp;Aficionado&nbsp;/<br>
