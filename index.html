@@ -118,6 +118,7 @@
             background-color: #000000;
             color: #e7e7e7;
             margin: 0;
+            overflow-x: hidden;
             animation: textShadow 1.0s infinite;
             user-select: none;
         }
@@ -209,7 +210,7 @@
 
         .title {
             font-family: 'Libre Barcode 39 Extended Text', cursive;
-            font-size: 70pt;
+            font-size: clamp(2rem, 10vw, 70pt);
         }
 
         .main {
@@ -219,7 +220,7 @@
         }
 
         .section {
-            margin: 4em;
+            margin: 4em auto 2em auto;
         }
 
         .avatar {
@@ -237,11 +238,9 @@
         }
 
         .multiline-text {
-            line-height: 1.5em;
-            margin-left: 10ch;
-            margin-top: 1em;
+            margin-top: 0;
+            width: max-content;
             text-align: end;
-            width: 50%
         }
 
         .icon-container {
@@ -525,7 +524,7 @@ void main() {
                     Negentropy&nbsp;Harvester&nbsp;&nbsp;
                 </h1>
                 <h1 class="section slide-in-right">
-                    Checkout&nbsp<a href="https://controllerbuddy.org/" target="_blank">ControllerBuddy</a>!
+                    Checkout <a href="https://controllerbuddy.org/" target="_blank">ControllerBuddy</a>!
                 </h1>
             </div>
             <div class="section slide-in-bottom">
